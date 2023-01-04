@@ -2,6 +2,7 @@ package com.bridgelabz.springconceptsapplication;
 
 import com.bridgelabz.springconceptsapplication.Component.DemoBean;
 
+import com.bridgelabz.springconceptsapplication.Component.EmployeeBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,10 @@ public class SpringConceptsApplication {
         ApplicationContext context = SpringApplication.run(SpringConceptsApplication.class, args);
         logger.debug("Checking context: {} " , context.getBean(DemoBean.class));
         logger.debug("\n*** Example using @Autowire annotation on property ***");
+        EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+        employeeBean.setEid(104);
+        employeeBean.setEname("Spring Framework Guru");
+        employeeBean.showEmployeeDetails();
     }
 
 }
